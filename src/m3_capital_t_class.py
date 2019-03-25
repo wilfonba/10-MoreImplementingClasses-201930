@@ -270,7 +270,7 @@ class CapitalT(object):
           :type dy: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # Done: 6.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -281,15 +281,15 @@ class CapitalT(object):
         #        Note: the pdf shows the different locations that
         #        the T moves through, but there is only one T at any moment.
         # ---------------------------------------------------------------------
-        self.h_rect.get_upper_left_corner().x += dx
-        self.h_rect.get_upper_left_corner().y += dy
-        self.h_rect.get_lower_right_corner().x += dx
-        self.h_rect.get_lower_right_corner().y += dy
+        self.h_rect.corner_1.x += dx
+        self.h_rect.corner_1.y += dy
+        self.h_rect.corner_2.x += dx
+        self.h_rect.corner_2.y += dy
 
-        self.v_rect.get_upper_left_corner().x += dx
-        self.v_rect.get_upper_left_corner().y += dy
-        self.v_rect.get_lower_right_corner().x += dx
-        self.v_rect.get_lower_right_corner().y += dy
+        self.v_rect.corner_1.x += dx
+        self.v_rect.corner_1.y += dy
+        self.v_rect.corner_2.x += dx
+        self.v_rect.corner_2.y += dy
 
     def clone(self):
         """
@@ -324,10 +324,12 @@ class CapitalT(object):
         # IMPORTANT RESTRICTION: You are NOT permitted to add any instance
         # variables beyond  h_rect  and  v_rect, at any point of this exercise.
         #######################################################################
-        return CapitalT(self.h_rect.get_center(),
-                        self.h_rect.get_width(),
-                        self.v_rect.get_height(),
-                        self.v_rect.get_width())
+        new_t = CapitalT(self.h_rect.get_center(),
+                         self.h_rect.get_width(),
+                         self.v_rect.get_height(),
+                         self.v_rect.get_width())
+        new_t.set_colors(self.h_rect.fill_color, self.h_rect.outline_color)
+        return new_t
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
