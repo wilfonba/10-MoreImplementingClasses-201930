@@ -42,7 +42,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.
+# Done: 2.
 #
 #  Step 2a:  Implement a class called   Baby   that has a constructor method
 #            (__init__) and two other methods, as described below.
@@ -107,6 +107,27 @@ def main():
 #          """ Brief description of what an object of the class 'is'. """
 #
 ###############################################################################
+
+class Baby():
+    def __init__(self, name):
+        self.name = name
+        self.hours = 0
+        print("Hello baby " + name + '!')
+
+    def feed_baby(self):
+        self.hours = 0
+        print("Thank you for feeding baby " + self.name + ",")
+
+    def hour_passes(self):
+        if self.hours == 0:
+            self.hours += 1
+            print("Baby " + self.name + " is sleeping.")
+        elif self.hours == 1:
+            self.hours += 1
+            print("Baby " + self.name + " is awake. Time for food.")
+        else:
+            self.hours += 1
+            print("Baby " + self.name + " is CRYING uncontrollably! Feed the Baby!")
 
 
 # -----------------------------------------------------------------------------
