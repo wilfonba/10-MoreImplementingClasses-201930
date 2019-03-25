@@ -29,7 +29,7 @@ def main():
         Baby McKinley is CRYING uncontrollably!  Feed the Baby!
         Baby McKinley is CRYING uncontrollably!  Feed the Baby!
     """
-    mckinley = Baby('McKinley')
+    mckinley = Baby('McKinle y')
     keegan = Baby('Keegan')
 
     for k in range(2):
